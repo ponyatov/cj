@@ -5,8 +5,9 @@ D += $(wildcard dune*)
 # extension
 .PHONY: run extension
 run: extension
-extension: /tmp/extension.byte
-/tmp/extension.byte: $(M) $(D)
+extension: extension.byte
+	js_of_ocaml $<
+extension.byte: $(M) $(D)
 	ocamlfind ocamlc \
 		-package js_of_ocaml -package js_of_ocaml-ppx -linkpkg \
 			-o $@ $(M)

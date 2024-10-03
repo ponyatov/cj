@@ -29,7 +29,9 @@
     "workspaceContains:**/cjpm.toml"
   ],
   "extensionDependencies": [
-    "tamasfe.even-better-toml"
+    "tamasfe.even-better-toml",
+    "ocamllabs.ocaml-platform",
+    "zepalmer.ocaml-indentation"
   ],
   "main": "./extension.js",
   "contributes": {
