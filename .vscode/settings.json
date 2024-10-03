@@ -68,4 +68,7 @@
         "kind": "opam",
         "switch": "default"
     },
+
+    // Cangjie
+    "cangjieTools.sdkPath": "${workspaceFolder}/bin",
 }
