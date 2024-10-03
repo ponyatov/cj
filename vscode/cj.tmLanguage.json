@@ -1,0 +1,19 @@
+{
+    "version": "0.0.1",
+    "scopeName": "source.cj",
+    "information_for_contributors": [
+        "light Cangjie syntax"
+    ],
+    "patterns": [
+        {
+            "include": "#comment"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "name": "comment.line.cj",
+            "comment": "Comments",
+            "match": "\\s*((//).*)$"
+        }
+    }
+}

@@ -1,0 +1,214 @@
+{
+  "name": "cj-tools",
+  "icon": "icon.png",
+  "displayName": "%ext.displayName%",
+  "description": "%ext.description%",
+  "version": "0.1.7",
+  "publisher": "michaelding",
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "cj",
+    "Cangjie",
+    "仓颉"
+  ],
+  "bugs": {
+    "url": "https://gitee.com/michael-eddy/cj-tools/issues"
+  },
+  "homepage": "https://gitee.com/michael-eddy/cj-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/michael-eddy/cj-tools.git"
+  },
+  "activationEvents": [
+    "onLanguage:Cangjie",
+    "workspaceContains:**/cjpm.toml"
+  ],
+  "extensionDependencies": [
+    "ide-innovation-lab.cangjie"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "grammars": [
+      {
+        "language": "toml",
+        "scopeName": "source.toml",
+        "path": "./res/toml.tmLanguage.json"
+      },
+      {
+        "language": "cj",
+        "scopeName": "source.cj",
+        "path": "./res/cj.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "cangjie-icons",
+        "label": "CangJie Icons",
+        "path": "./res/cj-icons.json"
+      }
+    ],
+    "viewsWelcome": [
+      {
+        "view": "explorer",
+        "contents": "%ext.contributes.viewsWelcome%"
+      }
+    ],
+    "commands": [
+      {
+        "command": "cj.createProject",
+        "title": "%ext.commands.createProject%"
+      },
+      {
+        "command": "cj.initProject",
+        "title": "%ext.commands.initProject%"
+      },
+      {
+        "command": "cj.buildProject",
+        "title": "%ext.commands.buildProject%"
+      },
+      {
+        "command": "cj.createFile",
+        "title": "%ext.commands.createFile%"
+      },
+      {
+        "command": "cj.dependenciesTools",
+        "title": "%ext.commands.dependenciesTools%"
+      },
+      {
+        "command": "cj.buildFile",
+        "title": "%ext.commands.buildFile%"
+      },
+      {
+        "command": "cj.updateDependencies",
+        "title": "%ext.commands.updateDependencies%"
+      },
+      {
+        "command": "cj.cleanProject",
+        "title": "%ext.commands.cleanProject%"
+      },
+      {
+        "command": "cj.about",
+        "title": "%ext.commands.about%"
+      }
+    ],
+    "languages": [
+      {
+        "id": "toml",
+        "aliases": [
+          "TOML"
+        ],
+        "extensions": [
+          ".toml"
+        ],
+        "filenames": [
+          "cjpm.lock"
+        ],
+        "configuration": "./res/toml.languageConfiguration.json"
+      },
+      {
+        "id": "cj",
+        "aliases": [
+            "Cangjie", "cangjie"
+        ],
+        "extensions": [
+            ".cj"
+        ],
+        "configuration": "./res/cj.languageConfiguration.json"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .toml",
+          "command": "cj.buildProject",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceExtname == .toml",
+          "command": "cj.initProject",
+          "group": "navigation@2"
+        },
+        {
+          "when": "resourceExtname == .toml",
+          "command": "cj.dependenciesTools",
+          "group": "navigation@3"
+        },
+        {
+          "when": "resourceExtname == .toml",
+          "command": "cj.updateDependencies",
+          "group": "navigation@4"
+        },
+        {
+          "when": "resourceExtname == .toml",
+          "command": "cj.cleanProject",
+          "group": "navigation@5"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "cj.createFile",
+          "group": "navigation@6"
+        },
+        {
+          "when": "resourceExtname == .cj",
+          "command": "cj.buildFile",
+          "group": "navigation@7"
+        },
+        {
+          "when": "resourceExtname == .cj",
+          "command": "cj.buildProject",
+          "group": "navigation@8"
+        },
+        {
+          "when": "resourceExtname == .cj",
+          "command": "cj.cleanProject",
+          "group": "navigation@9"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Cangjie Tools",
+      "properties": {
+        "cangjieTools.sdkPath": {
+          "type": "string",
+          "default": "",
+          "description": "%ext.configuration.sdkPath%"
+        },
+        "cangjieTools.intellisensesModulesPath": {
+          "type": "string",
+          "default": "",
+          "description": "%ext.configuration.modulesPath%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "package": "vsce package --baseImagesUrl https://gitee.com/michael-eddy/cj-tools/raw/master/",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "vscode-nls": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.65.0",
+    "vscode-nls-dev": "^4.0.4",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
