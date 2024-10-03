@@ -18,6 +18,10 @@ github: https://github.com/ponyatov/cj/tree/shadow/vscode
 - OCaml
 - Linux (Debian 12)
 
+extension development:
+
+- `js_of_ocaml` for compiling `./extension.ml` -> `./extension.js`
+
 ## Extension Settings
 
 This extension contributes the following settings:
