@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "publisher": "dponyatov",
   "engines": {
-    "vscode": "^1.65.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Programming Languages"
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ponyatov/cj",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ponyatov/cj.git"
+    "url": "https://github.com/ponyatov/cj/tree/shadow/vscode.git"
   },
   "activationEvents": [
     "onLanguage:Cangjie",
@@ -42,8 +42,10 @@
         "path": "./cj.tmLanguage.json"
       }
     ],
-    "commands": [
-    ],
+    "commands": [{
+        "command": "cj.sayHello",
+        "title": "Hello World"
+    }],
     "languages": [
       {
         "id": "cj",
@@ -69,11 +71,18 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
+    "compile": "make extension",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "package": "vsce package --baseImagesUrl https://gitee.com/michael-eddy/cj-tools/raw/master/",
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
+  },
+  "dependencies": {
+    "vscode-nls": "^5.2.0"
+  },
+  "devDependencies": {
+    "vscode-nls-dev": "^4.0.4",
+    "vscode": "0.10.x"
   }
 }

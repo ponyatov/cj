@@ -5,6 +5,8 @@ description: "using js_of_ocaml compiler"
 maintainer: ["Dmitry Ponyatov <dponyatov@gmail.com>"]
 authors: ["Dmitry Ponyatov <dponyatov@gmail.com>"]
 license: "MIT"
+homepage: "https://github.com/ponyatov/cj/tree/shadow/vscode"
+bug-reports: "@dponyatov"
 depends: [
   "dune" {>= "3.11"}
   "utop"
@@ -13,6 +15,7 @@ depends: [
   "js_of_ocaml"
   "js_of_ocaml-compiler"
   "js_of_ocaml-ppx"
+  "js_of_ocaml-syntax"
   "odoc" {with-doc}
 ]
 build: [
