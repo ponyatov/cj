@@ -1,0 +1,13 @@
+(lang dune 3.11)
+(name extension)
+(generate_opam_files true)
+(authors     "Dmitry Ponyatov <dponyatov@gmail.com>")
+(maintainers "Dmitry Ponyatov <dponyatov@gmail.com>")
+(license      MIT)
+(package
+ (name         extension)
+ (synopsis    "VSCode extension in OCaml")
+ (description "using js_of_ocaml compiler")
+ (depends      utop ocamlformat ocaml-lsp-server
+               js_of_ocaml js_of_ocaml-compiler js_of_ocaml-ppx)
+)
