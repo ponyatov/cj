@@ -4,7 +4,7 @@ MODULE = $(notdir $(CURDIR))
 # src
 M += $(wildcard src/*.ml test/*.ml)
 D += $(wildcard dune*) $(wildcard src/dune*)
-S += $(wildcard src/*.cj)
+S += $(wildcard lib/*.cj)
 C += $(wildcard src/*.c*)
 H += $(wildcard inc/*.h*)
 
