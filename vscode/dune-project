@@ -11,5 +11,5 @@
  (synopsis    "VSCode extension in OCaml")
  (description "using js_of_ocaml compiler")
  (depends      utop ocamlformat ocaml-lsp-server
-               js_of_ocaml js_of_ocaml-compiler js_of_ocaml-ppx js_of_ocaml-camlp4)
+               js_of_ocaml js_of_ocaml-compiler js_of_ocaml-ppx)
 )
