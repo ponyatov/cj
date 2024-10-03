@@ -27,6 +27,7 @@
         "rreverser.ragel",
         // Cangjie
         // "michaelding.cj-tools",
+        "tamasfe.even-better-toml",
         // embedded
         // "marus25.cortex-debug",
         // "zixuanwang.linkerscript",

@@ -1,6 +1,9 @@
 # var
 MODULE = $(notdir $(CURDIR))
 
+# tool
+CURL = curl -L -o
+
 # src
 M += $(wildcard src/*.ml test/*.ml)
 D += $(wildcard dune*) $(wildcard src/dune*)
@@ -25,17 +28,26 @@ tmp/format_ml: $(M) $(D) .ocamlformat
 	echo "version=`ocamlformat --version`" > $@
 	echo "profile=default"                >> $@
 
+# doc
+.PHONY: doc
+doc: doc/098646-01.pdf
+
+doc/098646-01.pdf:
+	$(CURL) $@ https://www.tup.com.cn/upload/books/yz/098646-01.pdf
+
 # install
 .PHONY: install update
-install:
+install: doc ref gz tools
 	$(MAKE) update
 update:
 	sudo apt update
 	sudo apt install -uy `cat apt.txt`
 	opam update
 	opam install -y . --deps-only
+ref:
+gz:
 
 .PHONY: tools
 tools: tools/README.md
 tools/README.md:
-	git clone -o gitee -b master git@gitee.com:dponyatov/cj-tools.git tools
+	git clone -o gitee -b dponyatov git@gitee.com:dponyatov/cj-tools.git tools
