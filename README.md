@@ -6,4 +6,4 @@
 
 github: https://github.com/ponyatov/cj
 
-Cangjie(tm) is a trademark of Huawei inc.
+Cangjie(tm) is a trademark of Huawei Technologies Co. Ltd.
