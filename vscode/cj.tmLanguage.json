@@ -1,19 +1,51 @@
 {
     "version": "0.0.1",
     "scopeName": "source.cj",
+    "fileTypes": [".cj"],
     "information_for_contributors": [
         "light Cangjie syntax"
     ],
     "patterns": [
         {
             "include": "#comment"
+        },
+        {
+            "include": "#keyword"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#number"
         }
     ],
     "repository": {
         "comment": {
             "name": "comment.line.cj",
-            "comment": "Comments",
             "match": "\\s*((//).*)$"
+        },
+        "keyword": {
+            "name": "keyword.control.cj",
+            "match": "\\b(let|println|main)\\b"
+        },
+        "string": {
+            "name": "string.quoted.double.cj",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.cj"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.cj"
+                }
+            }
+        },
+        "number": {
+            "name": "constant.numeric.cj",
+            "match": "[0-9]+"
         }
     }
 }
