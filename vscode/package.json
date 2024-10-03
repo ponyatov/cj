@@ -1,98 +1,89 @@
 {
-  "name": "cj",
-  "icon": "cj_logo.png",
-  "displayName": "cj script",
-  "description": "Cangjie-inspired script language",
-  "version": "0.0.1",
-  "publisher": "dponyatov",
-  "engines": {
-    "vscode": "^1.75.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "keywords": [
-    "cj", "Cangjie", "仓颉"
-  ],
-  "bugs": {
-    "url": "https://github.com/ponyatov/cj/issues"
-  },
-  "homepage": "https://github.com/ponyatov/cj",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ponyatov/cj/tree/shadow/vscode"
-  },
-  "activationEvents": [
-    "onLanguage:Cangjie",
-    "workspaceContains:**/cjpm.toml",
-    "workspaceContains:lib/**/*.cj"
-  ],
-  "extensionDependencies": [
-    "tamasfe.even-better-toml",
-    "ocamllabs.ocaml-platform",
-    "zepalmer.ocaml-indentation"
-  ],
-  "main": "./extension.js",
-  "contributes": {
-    "grammars": [
-      {
-        "language": "cj",
-        "scopeName": "source.cj",
-        "path": "./cj.tmLanguage.json"
-      }
+    "name":        "cj",
+    "icon":        "cj_logo.png",
+    "displayName": "cj script",
+    "description": "Cangjie-inspired script language",
+    "version":     "0.0.1",
+    "publisher":   "dponyatov",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
     ],
-    "commands": [
-        {
-            "command": "cj.sayHello",
-            "title": "cj: Hello World"
-        },
-        {
+    "keywords": [
+        "cj", "Cangjie", "仓颉"
+    ],
+    "bugs": {
+        "url": "https://github.com/ponyatov/cj/issues"
+    },
+    "homepage": "https://github.com/ponyatov/cj",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ponyatov/cj/tree/shadow/vscode"
+    },
+    "activationEvents": [
+        "onLanguage:Cangjie",
+        "workspaceContains:**/cjpm.toml",
+        "workspaceContains:lib/**/*.cj"
+    ],
+    "extensionDependencies": [
+        "tamasfe.even-better-toml",
+        "ocamllabs.ocaml-platform",
+        "zepalmer.ocaml-indentation"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "grammars": [{
+            "language": "cj",
+            "scopeName": "source.cj",
+            "path": "./cj.tmLanguage.json"
+        }],
+        "commands": [
+            {
+                "command": "cj.sayHello",
+                "title": "cj: Hello World"
+            },
+            {
+                "command": "cj.repl",
+                "title": "cj: REPL"
+            }
+        ],
+        "keybindings": [{
+            "key": "ctrl+enter",
             "command": "cj.repl",
-            "title": "cj: REPL"
+            "when": "editorTextFocus && editorLangId == 'cj'"
+        }],
+        "languages": [{
+            "id": "cj",
+            "aliases": [ "Cangjie", "cangjie" ],
+            "extensions": [ ".cj" ],
+            "configuration": "./res/cj.languageConfiguration.json"
+        }],
+        "configuration": {
+            "title": "Cangjie cj",
+            "properties": {
+                "cj.Path": {
+                    "type": "string",
+                    "default": "${workspaceFolder}",
+                    "description": "%ext.configuration.Path%"
+                }}
         }
-    ],
-    "keybindings": [{
-        "key": "ctrl+enter",
-        "command": "cj.repl",
-        "when": "editorTextFocus && editorLangId == 'cj'"
-    }],
-    "languages": [
-      {
-        "id": "cj",
-        "aliases": [
-            "Cangjie", "cangjie"
-        ],
-        "extensions": [
-            ".cj"
-        ],
-        "configuration": "./res/cj.languageConfiguration.json"
-      }
-    ],
-    "configuration": {
-      "title": "Cangjie cj",
-      "properties": {
-        "cj.Path": {
-          "type": "string",
-          "default": "${workspaceFolder}",
-          "description": "%ext.configuration.Path%"
-        }
-      }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "make extension",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "package": "vsce package --baseImagesUrl https://gitee.com/michael-eddy/cj-tools/raw/master/",
+        "lint": "eslint src --ext ts",
+        "test": "vscode-test"
+    },
+    "dependencies": {
+        "vscode-nls": "^5.2.0"
+    },
+    "devDependencies": {
+        "vscode-nls-dev": "^4.0.4",
+        "vscode": "1.1.x"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "make extension",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "package": "vsce package --baseImagesUrl https://gitee.com/michael-eddy/cj-tools/raw/master/",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
-  },
-  "dependencies": {
-    "vscode-nls": "^5.2.0"
-  },
-  "devDependencies": {
-    "vscode-nls-dev": "^4.0.4",
-    "vscode": "0.10.x"
-  }
 }

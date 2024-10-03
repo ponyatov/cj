@@ -1,3 +1,4 @@
 *.cm*
 *.byte
+node_modules/
 !.gitignore
