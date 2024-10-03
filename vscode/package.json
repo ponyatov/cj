@@ -24,7 +24,8 @@
   },
   "activationEvents": [
     "onLanguage:Cangjie",
-    "workspaceContains:**/cjpm.toml"
+    "workspaceContains:**/cjpm.toml",
+    "workspaceContains:lib/**/*.cj"
   ],
   "extensionDependencies": [
     "tamasfe.even-better-toml",

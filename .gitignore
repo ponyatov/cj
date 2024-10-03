@@ -5,6 +5,5 @@
 *.exe
 /docs/
 /_build/
-/tools/
 .ocamlformat
 !.gitignore
