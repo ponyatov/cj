@@ -3,4 +3,6 @@
 
 main() {
     println("Hello")
+    let i = 123
+    let f = 4.56
 }

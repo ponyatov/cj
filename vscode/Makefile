@@ -28,5 +28,3 @@ update:
 	sudo apt install -uy `cat apt.txt`
 	opam update
 	opam install -y . --deps-only
-ref:
-gz:
