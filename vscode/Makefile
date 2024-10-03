@@ -3,9 +3,10 @@ M += $(wildcard *.ml)
 D += $(wildcard dune*)
 
 # extension
-.PHONY: run extension
-run: extension
-extension: extension.byte
+.PHONY:   run extension
+run:          extension.js
+extension:    extension.js
+extension.js: extension.byte
 	js_of_ocaml $<
 extension.byte: $(M) $(D)
 	ocamlfind ocamlc \
