@@ -1,10 +1,11 @@
 {
     "name":        "cj",
-    "icon":        "cj_logo.png",
     "displayName": "cj script",
     "description": "Cangjie-inspired script language",
     "version":     "0.0.1",
+    "icon":        "cj_logo.png",
     "publisher":   "dponyatov",
+    "license":     "MIT",
     "engines": {
         "vscode": "^1.75.0"
     },
@@ -12,7 +13,7 @@
         "Programming Languages"
     ],
     "keywords": [
-        "cj", "Cangjie", "仓颉"
+        "cj", "Cangjie", "仓颉", "REPL", "scripting", "interpreter"
     ],
     "bugs": {
         "url": "https://github.com/ponyatov/cj/issues"
@@ -20,7 +21,7 @@
     "homepage": "https://github.com/ponyatov/cj",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ponyatov/cj/tree/shadow/vscode"
+        "url" : "https://github.com/ponyatov/cj/tree/shadow/vscode"
     },
     "activationEvents": [
         "onLanguage:Cangjie",
