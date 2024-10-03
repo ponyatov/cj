@@ -4,10 +4,9 @@
     },
     "autoCloseBefore": ";:.,=}])> \n\t",
     "brackets": [
-        [
-            "[",
-            "]"
-        ]
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"]
     ],
     "autoClosingPairs": [
         {
@@ -24,6 +23,10 @@
                 "string",
                 "comment"
             ]
+        },
+        {
+            "open": "(",
+            "close": ")"
         },
         {
             "open": "[",

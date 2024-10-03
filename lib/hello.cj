@@ -5,4 +5,5 @@ main(int argc, char *argv[]) {
     println("He\r\n\zllo")
     let i = (123)
     let f = 4.56
+    [123]
 }

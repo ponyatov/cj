@@ -59,7 +59,8 @@
             "patterns": [
                 {"include": "#string"},
                 {"include": "#number"},
-                {"include": "#paren-expression"}
+                {"include": "#paren-expression"},
+                {"include": "#quad-expression"}
             ]
         },
         "paren-expression": {
@@ -69,6 +70,14 @@
             "patterns": [
                 {"include": "#type"},
                 {"include": "#expression"}
+            ]
+        },
+        "quad-expression": {
+            "name": "expression.group",
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {"include": "#number"}
             ]
         },
         "number": {
