@@ -27,3 +27,25 @@ This extension contributes the following settings:
 ## Report Issues
 
 https://github.com/ponyatov/cj/issues
+
+## OCaml-powered extension
+
+This extension uses `js_of_ocaml` to produce its `./extension.js` code:
+
+https://github.com/ocsigen/js_of_ocaml
+
+```shell
+cd ~/cj/vscode
+make install
+```
+
+- Ctrl+Shift+P
+- Developer: Install Extension From Location... `~/cj/vscode`
+
+```shell
+cd ~/cj/vscode
+make extension
+```
+
+- Ctrl+Shift+P
+- Developer: Reload Window
