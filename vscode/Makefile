@@ -5,6 +5,7 @@ D += $(wildcard dune*)
 # extension
 .PHONY:   run extension
 run:          extension.js
+	node $^
 extension:    extension.js
 extension.js: extension.byte
 	js_of_ocaml $< -o $@
