@@ -15,7 +15,7 @@ depends: [
   "js_of_ocaml"
   "js_of_ocaml-compiler"
   "js_of_ocaml-ppx"
-  "js_of_ocaml-syntax"
+  "js_of_ocaml-camlp4"
   "odoc" {with-doc}
 ]
 build: [

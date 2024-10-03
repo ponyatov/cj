@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ponyatov/cj",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ponyatov/cj/tree/shadow/vscode.git"
+    "url": "https://github.com/ponyatov/cj/tree/shadow/vscode"
   },
   "activationEvents": [
     "onLanguage:Cangjie",
