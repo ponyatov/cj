@@ -12,9 +12,7 @@
     "Programming Languages"
   ],
   "keywords": [
-    "cj",
-    "Cangjie",
-    "仓颉"
+    "cj", "Cangjie", "仓颉"
   ],
   "bugs": {
     "url": "https://github.com/ponyatov/cj/issues"
@@ -42,9 +40,20 @@
         "path": "./cj.tmLanguage.json"
       }
     ],
-    "commands": [{
-        "command": "cj.sayHello",
-        "title": "Hello World"
+    "commands": [
+        {
+            "command": "cj.sayHello",
+            "title": "cj: Hello World"
+        },
+        {
+            "command": "cj.repl",
+            "title": "cj: REPL"
+        }
+    ],
+    "keybindings": [{
+        "key": "ctrl+enter",
+        "command": "cj.repl",
+        "when": "editorTextFocus && editorLangId == 'cj'"
     }],
     "languages": [
       {

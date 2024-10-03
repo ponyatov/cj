@@ -10,9 +10,9 @@ extension.js: extension.byte
 	js_of_ocaml $<
 extension.byte: $(M) $(D) Makefile
 	ocamlfind ocamlc \
-		-package js_of_ocaml.syntax -syntax camlp4o \
 		-package js_of_ocaml -package js_of_ocaml-ppx -linkpkg \
 			-o $@ $(M)
+# -package js_of_ocaml.syntax -syntax camlp4o \
 
 # format
 .PHONY: format
