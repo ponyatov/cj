@@ -1,0 +1,4 @@
+(executable
+ (public_name cj)
+ (name cj)
+ (libraries batteries))

@@ -1,0 +1,9 @@
+*~
+*.swp
+*.log
+*.o
+*.exe
+/docs/
+/_build/
+.ocamlformat
+!.gitignore
