@@ -27,6 +27,7 @@
         "ref/**": true,
     },
     "files.associations": {
+        "*.cj": "rust"
     },
 
     // editor

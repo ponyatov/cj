@@ -1,14 +1,12 @@
 open Batteries
 
-let read file:string =
-  let ic = open_in file in
-  let data = try input_lines ic with End_of_file -> "" in 
-  close_in ic;
-  data
-
-
-  "lib/cj.cj" |> open_in |> input_line
+let read (file : string) =
+  let ic = Stdlib.open_in file in
+  let data = try Stdlib.input_line ic with End_of_file -> "" in
+  Stdlib.close_in ic;
+  let lines = String.split_on_char '\n' data in
+  List.iter print_endline lines
 
 let () =
   print_endline (dump Sys.argv);
-  print_endline (Sys.argv |> (fun skip arr -> Array.tail arr skip) 1 |> dump)
+  Sys.argv |> (fun skip arr -> Array.tail arr skip) 1 |> Array.iter read
