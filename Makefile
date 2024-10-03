@@ -34,3 +34,8 @@ update:
 	sudo apt install -uy `cat apt.txt`
 	opam update
 	opam install -y . --deps-only
+
+.PHONY: tools
+tools: tools/README.md
+tools/README.md:
+	git clone -o gitee -b master git@gitee.com:dponyatov/cj-tools.git tools

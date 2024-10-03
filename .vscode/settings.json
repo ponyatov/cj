@@ -27,7 +27,7 @@
         "ref/**": true,
     },
     "files.associations": {
-        "*.cj": "rust"
+        // "*.cj": "Cangjie"
     },
 
     // editor
