@@ -7,7 +7,7 @@ D += $(wildcard dune*)
 run:          extension.js
 extension:    extension.js
 extension.js: extension.byte
-	js_of_ocaml $<
+	js_of_ocaml $< -o $@
 extension.byte: $(M) $(D) Makefile
 	ocamlfind ocamlc \
 		-package js_of_ocaml -package js_of_ocaml-ppx -linkpkg \
