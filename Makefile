@@ -27,6 +27,10 @@ tmp/format_ml: $(M) $(D) .ocamlformat
 .ocamlformat:
 	echo "version=`ocamlformat --version`" > $@
 	echo "profile=default"                >> $@
+	echo "margin=80"                      >> $@
+	echo "line-endings=lf"                >> $@
+	echo "break-cases=all"                >> $@
+	echo "wrap-comments=true"             >> $@
 
 # doc
 .PHONY: doc
