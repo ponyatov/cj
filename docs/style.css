@@ -1,1 +1,8 @@
 * { background: #222; color: lightgreen; }
+a { color: lightblue; }
+h1 { color: lightseagreen; }
+code * { font-family: monospace; }
+.typetable * { font-family: monospace; color: lightcyan; }
+.keyword { font-family: monospace; color: lightslategray; }
+.type { color: lightcoral; }
+.info-desc * { color:lightgoldenrodyellow; }
