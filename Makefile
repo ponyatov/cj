@@ -39,6 +39,10 @@ doc: doc/098646-01.pdf
 doc/098646-01.pdf:
 	$(CURL) $@ https://www.tup.com.cn/upload/books/yz/098646-01.pdf
 
+.PHONY: doxy
+doxy: $(M) $(D)
+	rm -rf docs ; ocamldoc -d docs -html $(M)
+
 # install
 .PHONY: install update
 install: doc ref gz tools
