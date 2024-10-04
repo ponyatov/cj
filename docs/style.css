@@ -1,12 +1,12 @@
-* { background: #222; color: lightgreen; }
-a { color: lightblue; }
-h1 { color: lightseagreen; }
-code * { font-family: monospace; }
+ *           { background: #222; color: lightgreen; }
+ a           { color: lightblue; }
+ h1          { color: lightseagreen; }
+ code *      { font-family: monospace; }
 .typetable * { font-family: monospace; color: lightcyan; }
-.keyword { font-family: monospace; color: lightblue; }
+.keyword     { font-family: monospace; color: lightblue; }
 .keywordsign { font-family: monospace; color: lightgray; }
-.type { color: lightcoral; }
+.type        { color: lightcoral; }
 .constructor { color: lightsalmon; }
-.string { color: lightseagreen; }
+.string      { color: lightseagreen; }
 .info-desc * { color:lightgoldenrodyellow; }
-.comment { color: lightslategray; }
+.comment     { color: lightslategray; }

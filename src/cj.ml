@@ -1,5 +1,6 @@
 open Batteries
 
+(** read file name *)
 let read (file : string) =
   let ic = Stdlib.open_in file in
   let data =
@@ -10,6 +11,7 @@ let read (file : string) =
   let lines = String.split_on_char '\n' data in
   List.iter print_endline lines
 
+(** main *)
 let () =
   print_endline (dump Sys.argv);
   Sys.argv |> (fun skip arr -> Array.tail arr skip) 1 |> Array.iter read
