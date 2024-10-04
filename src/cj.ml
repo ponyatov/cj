@@ -20,6 +20,7 @@ type op = Add | Sub | Mul | Div
 (** expression *)
 type expr = Int of int | Pfx of op * expr | Infix of op * expr * expr
 
+(** pretty-print *)
 let rec pp (some : expr) : string =
   match some with
   | Int n -> string_of_int n
