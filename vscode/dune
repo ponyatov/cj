@@ -1,4 +1,8 @@
 (executable
  (name extension)
  (modes js)
- (preprocess (pps js_of_ocaml-ppx)))
+ (preprocess
+  (pps gen_js_api.ppx))
+ (libraries base gen_js_api node ppxlib)
+ (js_of_ocaml
+  (flags --source-map --pretty)))

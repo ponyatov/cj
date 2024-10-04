@@ -10,6 +10,8 @@
  (name         extension)
  (synopsis    "VSCode extension in OCaml")
  (description "using js_of_ocaml compiler")
+ (allow_empty)
  (depends      utop ocamlformat ocaml-lsp-server
-               js_of_ocaml js_of_ocaml-compiler js_of_ocaml-ppx)
+               js_of_ocaml gen_js_api
+               js_of_ocaml-compiler js_of_ocaml-ppx)
 )
