@@ -4,5 +4,8 @@ h1 { color: lightseagreen; }
 code * { font-family: monospace; }
 .typetable * { font-family: monospace; color: lightcyan; }
 .keyword { font-family: monospace; color: lightslategray; }
+.keywordsign { font-family: monospace; color: lightgray; }
 .type { color: lightcoral; }
+.constructor { color: lightcoral; }
+.string { color: lightseagreen; }
 .info-desc * { color:lightgoldenrodyellow; }
