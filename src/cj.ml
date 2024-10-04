@@ -18,12 +18,11 @@ let () =
 type op = Add | Sub | Mul | Div
 
 (** expression *)
-type expr = Int of int | Pfx of binop * expr | Infix of binop * expr * expr
+type expr = Int of int | Pfx of op * expr | Infix of op * expr * expr
 
 let rec pp (some : expr) : string =
   match some with
-  | Num (Int n) -> string_of_int n
-  | Num (Float f) -> string_of_float f
+  | Int n -> string_of_int n
   | Pfx (Add, e) -> "+" ^ pp e
   | Pfx (Sub, e) -> "-" ^ pp e
   | Pfx (Mul, e) -> failwith " * expr "
@@ -34,9 +33,9 @@ let rec pp (some : expr) : string =
   | Infix (Div, e1, e2) -> pp e1 ^ "/" ^ pp e2
 
 let () =
-  print_endline (pp (Pfx (Add, Num (Int 1))));
-  print_endline (pp (Pfx (Sub, Num (Int 2))));
-  print_endline (pp (Pfx (Mul, Num (Int 3))));
-  print_endline (pp (Pfx (Div, Num (Int 4))))
+  print_endline (pp (Pfx (Add, Int 1)));
+  print_endline (pp (Pfx (Sub, Int 2)));
+  print_endline (pp (Pfx (Mul, Int 3)));
+  print_endline (pp (Pfx (Div, Int 4)))
 (* let () = print_endline (pp Op (All)); print_endline (pp Op (All));
    print_endline (pp Op (All)); print_endline (pp Op (All)) *)
