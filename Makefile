@@ -41,9 +41,10 @@ doc/098646-01.pdf:
 
 .PHONY: doxy
 doxy: $(M) $(D)
-	rm -rf docs ; git checkout docs
-# ocamlc -c src/$(MODULE).ml
-	ocamlfind ocamldoc -d docs -keep-code -charset utf8 -html -package batteries src/$(MODULE).ml
+# rm -rf docs ; git checkout docs
+	ocamlfind ocamldoc -d docs -charset utf8 -html \
+		-package batteries \
+			-keep-code src/$(MODULE).ml
 
 # install
 .PHONY: install update
