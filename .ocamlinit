@@ -1,3 +1,6 @@
 #use "topfind";;
 #require "batteries";;
 open Batteries;;
+open Cj;;
+open Cj.Grammar;;
+#install_printer Cj.Grammar.pp;;
