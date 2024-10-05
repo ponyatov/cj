@@ -14,6 +14,7 @@ depends: [
   "ocamlformat"
   "ocaml-lsp-server"
   "batteries"
+  "ppx_inline_test"
   "odoc" {with-doc}
 ]
 build: [

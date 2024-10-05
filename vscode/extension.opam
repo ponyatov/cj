@@ -13,7 +13,7 @@ depends: [
   "ocamlformat"
   "ocaml-lsp-server"
   "js_of_ocaml"
-  "gen_js_api-ppx"
+  "gen_js_api"
   "js_of_ocaml-compiler"
   "js_of_ocaml-ppx"
   "odoc" {with-doc}

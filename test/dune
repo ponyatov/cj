@@ -1,2 +1,3 @@
 (test
- (name cj_test))
+ (name cj_test)
+ (libraries cjl batteries))

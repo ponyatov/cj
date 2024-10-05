@@ -10,6 +10,6 @@
  (name         cj)
  (synopsis    "Cangjie-inspired script language")
  (description "OCaml prototype for native Linux")
- (depends      utop ocamlformat ocaml-lsp-server batteries)
+ (depends      utop ocamlformat ocaml-lsp-server batteries ppx_inline_test)
  (tags        (Cangjie script compiler interpreter))
 )

@@ -5,8 +5,8 @@ MODULE = $(notdir $(CURDIR))
 CURL = curl -L -o
 
 # src
-M += $(wildcard src/*.ml test/*.ml)
-D += $(wildcard dune*) $(wildcard src/dune*)
+M += $(wildcard src/*.ml) $(wildcard lib/*.ml) $(wildcard test/*.ml)
+D += $(wildcard dune*) $(wildcard src/dune*) $(wildcard lib/dune*) $(wildcard test/dune*)
 S += $(wildcard lib/*.cj)
 C += $(wildcard src/*.c*)
 H += $(wildcard inc/*.h*)
@@ -17,6 +17,11 @@ all: $(M) $(D) $(S)
 	dune build src/$(MODULE).exe
 run: $(M) $(D) $(S)
 	dune exec src/$(MODULE).exe $(S)
+
+# test
+.PHONY: test
+test: $(M) $(D) $(S)
+	dune run$@
 
 # format
 .PHONY: format
@@ -44,7 +49,8 @@ doxy: $(M) $(D)
 # rm -rf docs ; git checkout docs
 	ocamlfind ocamldoc -d docs -charset utf8 -html \
 		-package batteries \
-			-keep-code src/$(MODULE).ml
+			-keep-code \
+				src/$(MODULE).ml
 
 # install
 .PHONY: install update

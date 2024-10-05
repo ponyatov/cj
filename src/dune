@@ -3,4 +3,4 @@
  (name cj)
  (flags
   (-warn-error "-unused-value-declaration"))
- (libraries batteries))
+ (libraries cjl batteries))
