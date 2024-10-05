@@ -1,7 +1,7 @@
 (library
- (name cjl)
+ (name cj)
  (wrapped true)
- (modules cjl grammar)
+ (modules source grammar)
  (libraries batteries)
  (inline_tests)
  (preprocess
