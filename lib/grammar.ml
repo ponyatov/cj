@@ -11,8 +11,8 @@ type expr =
   | Infix of op * expr * expr
 
 (** dump expr with type prefixes *)
-let rec dump (some : expr) : string =
-  match some with
+let rec dump (t : expr) : string =
+  match t with
   | Int n -> "int:" ^ string_of_int n
   | Id s -> "id:" ^ s
   | Pfx (Add, e) -> "+ " ^ dump e
@@ -31,4 +31,4 @@ let%test "-pfx" = "- int:3" = (Pfx (Sub, Int 3) |> dump)
 let%test "x+2" = "id:x + int:2" = (Infix (Add, Id "x", Int 2) |> dump)
 
 (** pretty printer for utop *)
-let pp (_fmt : Format.formatter) (t : expr) : unit = t |> dump |> print_endline
+let pp (fmt : Format.formatter) (t : expr) = Format.fprintf fmt "%s" (t |> dump)
